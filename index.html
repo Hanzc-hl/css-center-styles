@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS居中</title>
+
+  <style>
+    .wrapper {
+      width: auto;
+      height: auto;
+      padding: 20px;
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    h1,
+    h1,
+    p {
+      text-align: center;
+    }
+    .parent{
+      width: 200px;
+      height: 160px;
+      background-color: #7c7c7c;
+    }
+    .child{
+      width: 50%;
+      height: 50%;
+      background-color: #dadada;
+    }
+    .code {
+      width: 300px;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>1. absolute + 负margin（子元素定宽）</h1>
+  <style>
+    #absolute_-margin .parent {
+      position: relative;
+    }
+
+    #absolute_-margin .child {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -40px;
+      margin-left: -50px;
+      width: 100px;
+      height: 80px;
+    }
+  </style>
+  <div id="absolute_-margin" class="wrapper">
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+    <div class="code">
+      <code>
+        <pre>
+          .parent {
+            position: relative;
+          }
+        </pre>
+      </code>
+    </div>
+    <div class="code">
+      <code>
+        <pre>
+          .child {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -40px;
+            margin-left: -50px;
+            width: 100px;
+            height: 80px;
+          }
+        </pre>
+      </code>
+    </div>
+  </div>
+  <hr>
+
+
+  
+  <h1>2. absolute + calc（子元素定宽）</h1>
+  <style>
+    #absolute_calc .parent {
+      position: relative;
+    }
+
+    #absolute_calc .child {
+      position: absolute;
+      top: calc(50% - 40px);
+      left: calc(50% - 50px);
+      width: 100px;
+      height: 80px;
+    }
+  </style>
+  <div id="absolute_calc" class="wrapper">
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+    <div class="code">
+      <code>
+        <pre>
+          .parent {
+            position: relative;
+          }
+        </pre>
+      </code>
+    </div>
+    <div class="code">
+      <code>
+        <pre>
+          .child {
+            position: absolute;
+            top: calc(50% - 40px);
+            left: calc(50% - 50px);
+            width: 100px;
+            height: 80px;
+          }
+        </pre>
+      </code>
+    </div>
+  </div>
+  <hr>
+
+  
+
+  <h1>3. absolute + transform</h1>
+  <style>
+    #absolute_transform .parent {
+      position: relative;
+    }
+
+    #absolute_transform .child {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  <div id="absolute_transform" class="wrapper">
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+    <div class="code">
+      <code>
+        <pre>
+          .parent {
+            position: relative;
+          }
+        </pre>
+      </code>
+    </div>
+    <div class="code">
+      <code>
+        <pre>
+          .child {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        </pre>
+      </code>
+    </div>
+  </div>
+  <hr>
+
+  <h1>4. absolute + margin:auto</h1>
+  <style>
+    #absolute_margin-auto .parent {
+      position: relative;
+    }
+
+    #absolute_margin-auto .child {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: auto;
+    }
+  </style>
+  <div id="absolute_margin-auto" class="wrapper">
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+    <div class="code">
+      <code>
+        <pre>
+          .parent {
+            position: relative;
+          }
+        </pre>
+      </code>
+    </div>
+    <div class="code">
+      <code>
+        <pre>
+          .child {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+          }
+        </pre>
+      </code>
+    </div>
+  </div>
+  <hr>
+
+
+
+  <h1>5. flex + margin:auto</h1>
+  <style>
+    #flex_margin-auto .parent {
+      display: flex;
+    }
+
+    #flex_margin-auto .child {
+      margin: auto;
+    }
+  </style>
+  <div id="flex_margin-auto" class="wrapper">
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+    <div class="code">
+      <code>
+        <pre>
+          .parent {
+            display: flex;
+          }
+        </pre>
+      </code>
+    </div>
+    <div class="code">
+      <code>
+        <pre>
+          .child {
+            margin: auto;
+          }
+        </pre>
+      </code>
+    </div>
+  </div>
+  <hr>
+
+  <h1>6. flex</h1>
+  <style>
+    #flex .parent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+  <div id="flex_margin-auto" class="wrapper">
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+    <div class="code">
+      <code>
+        <pre>
+          .parent {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+        </pre>
+      </code>
+    </div>
+    <div class="code">
+      <code>
+        <pre>
+          .child { }
+        </pre>
+      </code>
+    </div>
+  </div>
+  <hr>
+
+
+
+
+  <h1>7. grid</h1>
+  <style>
+    #grid .parent {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+    }
+    #grid .child {
+      width: 100px;
+      height: 80px;
+    }
+  </style>
+  <div id="grid" class="wrapper">
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+    <div class="code">
+      <code>
+        <pre>
+          .parent {
+            display: grid;
+            justify-content: center;
+            align-items: center;
+          }
+        </pre>
+      </code>
+    </div>
+    <div class="code">
+      <code>
+        <pre>
+          .child { 
+            width: 100px;
+            height: 80px;
+          }
+        </pre>
+      </code>
+    </div>
+  </div>
+  <hr>
+
+
+  
+  <h1>8. line-height</h1>
+  <style>
+    #line-height .parent {
+      line-height: 160px;
+      text-align: center;
+    }
+
+    #line-height .child {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  </style>
+  <div id="line-height" class="wrapper">
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+    <div class="code">
+      <code>
+        <pre>
+          .parent {
+            line-height: 160px;
+            text-align: center;
+          }
+        </pre>
+      </code>
+    </div>
+    <div class="code">
+      <code>
+        <pre>
+          .child {
+            display: inline-block;
+            vertical-align: middle;
+          }
+        </pre>
+      </code>
+    </div>
+  </div>
+  <hr>
+
+</body>
+
+</html>
